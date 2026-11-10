@@ -1,0 +1,235 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "Lista de compras API",
+    "collectionId": "cd4f5d48-be03-4d8c-8a9b-eae7a0649b58",
+    "dateExported": "2026-11-09T22:52:10.343Z",
+    "version": "1.4",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "f2351e0e-0f92-47ce-a5e0-b02f4fa7323a",
+            "colId": "cd4f5d48-be03-4d8c-8a9b-eae7a0649b58",
+            "containerId": "",
+            "name": "01 POST producto OK",
+            "url": "http://localhost:3000/api/products",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2026-11-09T22:25:37.598Z",
+            "modified": "2026-11-09T22:25:37.598Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": [
+                    "{ \"name\": \"Leche\", \"quantity\": 2, \"category\": \"lacteos\", \"notes\": \"Proteica\" }"
+                ],
+                "form": []
+            }
+        },
+        {
+            "_id": "1dc79088-c474-4aab-8fd0-97e8265254ce",
+            "colId": "cd4f5d48-be03-4d8c-8a9b-eae7a0649b58",
+            "containerId": "",
+            "name": "02 POST sin comentario",
+            "url": "http://localhost:3000/api/products",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2026-11-09T22:26:09.669Z",
+            "modified": "2026-11-09T22:26:09.671Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": [
+                    "{ \"name\": \"Pan\", \"category\": \"panaderia\" }"
+                ],
+                "form": []
+            }
+        },
+        {
+            "_id": "2967e186-6a6d-4500-a7f2-a4b84c374649",
+            "colId": "cd4f5d48-be03-4d8c-8a9b-eae7a0649b58",
+            "containerId": "",
+            "name": "03 GET todos",
+            "url": "http://localhost:3000/api/products",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2026-11-09T22:27:48.296Z",
+            "modified": "2026-11-09T22:27:48.297Z",
+            "headers": []
+        },
+        {
+            "_id": "bd897636-df97-4548-a8d2-6ad0587af37a",
+            "colId": "cd4f5d48-be03-4d8c-8a9b-eae7a0649b58",
+            "containerId": "",
+            "name": "04 GET por id",
+            "url": "http://localhost:3000/api/products/1",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2026-11-09T22:28:41.213Z",
+            "modified": "2026-11-09T22:28:41.213Z",
+            "headers": []
+        },
+        {
+            "_id": "d336b58d-2e01-4354-be46-72ae60839358",
+            "colId": "cd4f5d48-be03-4d8c-8a9b-eae7a0649b58",
+            "containerId": "",
+            "name": "05 PUT marcar comprado",
+            "url": "http://localhost:3000/api/products/1",
+            "method": "PUT",
+            "sortNum": 50000,
+            "created": "2026-11-09T22:32:08.847Z",
+            "modified": "2026-11-09T22:32:08.848Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": [
+                    "{ \"name\": \"Leche\", \"quantity\": 2, \"category\": \"lacteos\", \"notes\": \"Proteica\", \"purchased\": true }"
+                ],
+                "form": []
+            }
+        },
+        {
+            "_id": "2b03fcc7-3349-4277-807d-f3c969ca7bbe",
+            "colId": "cd4f5d48-be03-4d8c-8a9b-eae7a0649b58",
+            "containerId": "",
+            "name": "06 DELETE",
+            "url": "http://localhost:3000/api/products/1",
+            "method": "DELETE",
+            "sortNum": 60000,
+            "created": "2026-11-09T22:33:21.528Z",
+            "modified": "2026-11-09T22:33:21.528Z",
+            "headers": []
+        },
+        {
+            "_id": "ad1f4b32-6d5c-4ce6-8240-a96e339e4f77",
+            "colId": "cd4f5d48-be03-4d8c-8a9b-eae7a0649b58",
+            "containerId": "",
+            "name": "07 POST cantidad 0",
+            "url": "http://localhost:3000/api/products",
+            "method": "POST",
+            "sortNum": 80000,
+            "created": "2026-11-09T22:34:53.939Z",
+            "modified": "2026-11-09T22:34:53.939Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": [
+                    "{ \"name\": \"Pan\", \"quantity\": 0, \"category\": \"panaderia\" }"
+                ],
+                "form": []
+            }
+        },
+        {
+            "_id": "4c9a09fa-abe4-4128-ab87-c87bbccada5c",
+            "colId": "cd4f5d48-be03-4d8c-8a9b-eae7a0649b58",
+            "containerId": "",
+            "name": "08 POST categoria invalida",
+            "url": "http://localhost:3000/api/products",
+            "method": "POST",
+            "sortNum": 90000,
+            "created": "2026-11-09T22:36:12.949Z",
+            "modified": "2026-11-09T22:36:12.949Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": [
+                    "{ \"name\": \"Pan\", \"category\": \"ropa\" }"
+                ],
+                "form": []
+            }
+        },
+        {
+            "_id": "6252983e-71ec-48ac-88c5-567229c2dff5",
+            "colId": "cd4f5d48-be03-4d8c-8a9b-eae7a0649b58",
+            "containerId": "",
+            "name": "09 POST sin nombre",
+            "url": "http://localhost:3000/api/products",
+            "method": "POST",
+            "sortNum": 100000,
+            "created": "2026-11-09T22:37:07.924Z",
+            "modified": "2026-11-09T22:37:07.924Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": [
+                    "{ \"category\": \"panaderia\" }"
+                ],
+                "form": []
+            }
+        },
+        {
+            "_id": "efc5028b-b972-4b24-b7dc-7deb790da681",
+            "colId": "cd4f5d48-be03-4d8c-8a9b-eae7a0649b58",
+            "containerId": "",
+            "name": "10 GET id inexistente",
+            "url": "http://localhost:3000/api/products/2345",
+            "method": "GET",
+            "sortNum": 110000,
+            "created": "2026-11-09T22:38:04.784Z",
+            "modified": "2026-11-09T22:38:04.785Z",
+            "headers": []
+        },
+        {
+            "_id": "7948ae6e-9ed0-48a5-a6be-1bd95c4b2839",
+            "colId": "cd4f5d48-be03-4d8c-8a9b-eae7a0649b58",
+            "containerId": "",
+            "name": "11 GET id invalido",
+            "url": "http://localhost:3000/api/products/abc",
+            "method": "GET",
+            "sortNum": 120000,
+            "created": "2026-11-09T22:38:48.957Z",
+            "modified": "2026-11-09T22:38:48.957Z",
+            "headers": []
+        },
+        {
+            "_id": "1c508ad0-e3dd-4896-8a1f-5639905a9828",
+            "colId": "cd4f5d48-be03-4d8c-8a9b-eae7a0649b58",
+            "containerId": "",
+            "name": "12 DELETE inexistente",
+            "url": "http://localhost:3000/api/products/2345",
+            "method": "DELETE",
+            "sortNum": 130000,
+            "created": "2026-11-09T22:39:45.179Z",
+            "modified": "2026-11-09T22:39:45.179Z",
+            "headers": []
+        },
+        {
+            "_id": "69d6254d-ccf0-4bb8-8429-5ce9a377ed76",
+            "colId": "cd4f5d48-be03-4d8c-8a9b-eae7a0649b58",
+            "containerId": "",
+            "name": "13 POST JSON invalido",
+            "url": "http://localhost:3000/api/products",
+            "method": "POST",
+            "sortNum": 140000,
+            "created": "2026-11-09T22:42:41.728Z",
+            "modified": "2026-11-09T22:42:41.728Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": [
+                    "{ \"name\": \"Pan\","
+                ],
+                "form": []
+            }
+        },
+        {
+            "_id": "73330c32-360d-4505-aa5f-f8f0e4758706",
+            "colId": "cd4f5d48-be03-4d8c-8a9b-eae7a0649b58",
+            "containerId": "",
+            "name": "14 POST comentario invalido",
+            "url": "http://localhost:3000/api/products",
+            "method": "POST",
+            "sortNum": 150000,
+            "created": "2026-11-09T22:43:48.423Z",
+            "modified": "2026-11-09T22:43:48.424Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": [
+                    "{ \"name\": \"Pan\", \"category\": \"panaderia\", \"notes\": 123 }"
+                ],
+                "form": []
+            }
+        }
+    ],
+    "ref": "FjUa-idHo_e0A18ZPFz1IOT-s7hMInAGSX2nG5I_2otX_aH1R6YrPuff6rjkuolHfbO3Hc9V1Ds3b8XMPbo3_g"
+}
