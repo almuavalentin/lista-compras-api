@@ -23,7 +23,7 @@ Necesitás tener Node.js instalado y una base de datos PostgreSQL, ya sea local 
 1. Clonar el repositorio e instalar las dependencias:
 
 ```bash
-git clone <https://github.com/almuavalentin/lista-compras-api>
+git clone https://github.com/almuavalentin/lista-compras-api
 cd lista-compras-api
 npm install
 ```
