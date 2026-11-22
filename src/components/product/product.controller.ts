@@ -2,9 +2,9 @@ import { Request, Response } from 'express';
 import { handleError } from '../../utils/httpError';
 import * as productService from './product.service';
 
-export const getAll = async (_req: Request, res: Response) => {
+export const getAll = async (req: Request, res: Response) => {
   try {
-    const products = await productService.getAllProducts();
+    const products = await productService.getAllProducts(req.query);
     res.status(200).json(products);
   } catch (error) {
     handleError(res, error);
@@ -22,7 +22,7 @@ export const getById = async (req: Request, res: Response) => {
 
 export const create = async (req: Request, res: Response) => {
   try {
-    const product = await productService.createProduct(req.body);
+    const product = await productService.createProduct(req.body, req.user!.id);
     res.status(201).json(product);
   } catch (error) {
     handleError(res, error);
@@ -31,7 +31,7 @@ export const create = async (req: Request, res: Response) => {
 
 export const update = async (req: Request, res: Response) => {
   try {
-    const product = await productService.updateProduct(req.params.id, req.body);
+    const product = await productService.updateProduct(req.params.id, req.body, req.user!);
     res.status(200).json(product);
   } catch (error) {
     handleError(res, error);

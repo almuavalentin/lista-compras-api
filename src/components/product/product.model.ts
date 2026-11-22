@@ -27,6 +27,7 @@ export class Product extends Model<InferAttributes<Product>, InferCreationAttrib
   declare category: Category;
   declare notes: CreationOptional<string | null>;
   declare purchased: CreationOptional<boolean>;
+  declare userId: CreationOptional<number | null>; // quién lo agregó
   declare createdAt: CreationOptional<Date>;
   declare updatedAt: CreationOptional<Date>;
 }
@@ -39,6 +40,7 @@ Product.init(
     category: { type: DataTypes.STRING, allowNull: false },
     notes: { type: DataTypes.STRING(200), allowNull: true },
     purchased: { type: DataTypes.BOOLEAN, allowNull: false, defaultValue: false },
+    userId: { type: DataTypes.INTEGER, allowNull: true },
     createdAt: DataTypes.DATE,
     updatedAt: DataTypes.DATE,
   },

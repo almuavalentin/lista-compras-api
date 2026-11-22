@@ -1,12 +1,14 @@
 import 'dotenv/config';
 import app from './app';
 import { sequelize } from './config/database';
-import './components/product/product.model';
+import './components/associations';
+import { getJwtSecret } from './config/jwt';
 
 const PORT = process.env.PORT || 3000;
 
 const start = async () => {
   try {
+    getJwtSecret(); // corta acá si falta JWT_SECRET
     await sequelize.authenticate();
     console.log('Conexión a PostgreSQL establecida');
     // alter: true actualiza las tablas existentes si cambia el modelo (solo para desarrollo)

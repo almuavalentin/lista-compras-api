@@ -12,6 +12,16 @@ export interface ProductInput {
   purchased: boolean;
 }
 
+export type ProductFilters = {
+  category?: Category;
+  purchased?: boolean;
+};
+
+export interface AuthUser {
+  id: number;
+  role: string;
+}
+
 // Valida el body y devuelve los datos limpios, con valores por defecto
 const validateProductData = (body: any): ProductInput => {
   const { name, quantity = 1, category, notes = null, purchased = false } = body ?? {};
@@ -41,6 +51,27 @@ const validateProductData = (body: any): ProductInput => {
   return { name: name.trim(), quantity, category, notes: cleanNotes, purchased };
 };
 
+// Lee los filtros opcionales de la URL: ?category=lacteos&purchased=false
+const parseFilters = (query: any): ProductFilters => {
+  const { category, purchased } = query ?? {};
+  const filters: ProductFilters = {};
+
+  if (category !== undefined) {
+    if (!CATEGORIES.includes(category)) {
+      throw new HttpError(400, `La categoría debe ser una de: ${CATEGORIES.join(', ')}`);
+    }
+    filters.category = category;
+  }
+  if (purchased !== undefined) {
+    if (purchased !== 'true' && purchased !== 'false') {
+      throw new HttpError(400, 'El filtro purchased debe ser true o false');
+    }
+    filters.purchased = purchased === 'true';
+  }
+
+  return filters;
+};
+
 const parseId = (rawId: string): number => {
   const id = Number(rawId);
   if (!Number.isInteger(id) || id <= 0) {
@@ -57,16 +88,28 @@ const getExistingProduct = async (rawId: string): Promise<Product> => {
   return product;
 };
 
-export const getAllProducts = (): Promise<Product[]> => productRepository.findAll();
+export const getAllProducts = (query: unknown): Promise<Product[]> =>
+  productRepository.findAll(parseFilters(query));
 
 export const getProductById = (rawId: string): Promise<Product> => getExistingProduct(rawId);
 
-export const createProduct = (body: unknown): Promise<Product> =>
-  productRepository.create(validateProductData(body));
+export const createProduct = (body: unknown, userId: number): Promise<Product> =>
+  productRepository.create({ ...validateProductData(body), userId });
 
-export const updateProduct = async (rawId: string, body: unknown): Promise<Product> => {
+export const updateProduct = async (
+  rawId: string,
+  body: unknown,
+  user: AuthUser
+): Promise<Product> => {
   const product = await getExistingProduct(rawId);
-  return productRepository.update(product, validateProductData(body));
+  const data = validateProductData(body);
+
+  // Regla de negocio: solo el encargado puede marcar o desmarcar un producto como comprado
+  if (data.purchased !== product.purchased && user.role !== 'shopper') {
+    throw new HttpError(403, 'Solo el encargado de la compra puede marcar productos como comprados');
+  }
+
+  return productRepository.update(product, data);
 };
 
 export const deleteProduct = async (rawId: string): Promise<void> => {

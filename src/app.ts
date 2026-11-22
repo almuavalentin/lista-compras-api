@@ -1,10 +1,14 @@
 import express, { NextFunction, Request, Response } from 'express';
 import productRoutes from './components/product/product.routes';
+import userRoutes from './components/user/user.routes';
+import { logger } from './middlewares/logger.middleware';
 
 const app = express();
 
 app.use(express.json());
+app.use(logger);
 
+app.use('/api/auth', userRoutes);
 app.use('/api/products', productRoutes);
 
 // Ruta inexistente

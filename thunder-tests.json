@@ -2,7 +2,7 @@
     "clientName": "Thunder Client",
     "collectionName": "Lista de compras API",
     "collectionId": "cd4f5d48-be03-4d8c-8a9b-eae7a0649b58",
-    "dateExported": "2026-11-09T22:52:10.343Z",
+    "dateExported": "2026-11-22T00:57:28.959Z",
     "version": "1.4",
     "folders": [],
     "requests": [
@@ -229,7 +229,295 @@
                 ],
                 "form": []
             }
+        },
+        {
+            "_id": "427e5d87-3972-4507-8f9f-0af3e4f9bbd7",
+            "colId": "cd4f5d48-be03-4d8c-8a9b-eae7a0649b58",
+            "containerId": "",
+            "name": "Registrar integrante",
+            "url": "http://localhost:3000/api/auth/register",
+            "method": "POST",
+            "sortNum": 160000,
+            "created": "2026-11-21T23:51:02.340Z",
+            "modified": "2026-11-21T23:51:02.341Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": [
+                    "{ \"name\": \"Valentin\", \"email\": \"valentin@mail.com\", \"password\": \"123456\" }"
+                ],
+                "form": []
+            }
+        },
+        {
+            "_id": "10e88350-20ea-49cf-aa1e-f69bf9018738",
+            "colId": "cd4f5d48-be03-4d8c-8a9b-eae7a0649b58",
+            "containerId": "",
+            "name": "Registrar encargado",
+            "url": "http://localhost:3000/api/auth/register",
+            "method": "POST",
+            "sortNum": 170000,
+            "created": "2026-11-21T23:53:15.584Z",
+            "modified": "2026-11-21T23:53:15.584Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": [
+                    "{ \"name\": \"Almua\", \"email\": \"almua@mail.com\", \"password\": \"123456\", \"role\": \"shopper\" }"
+                ],
+                "form": []
+            }
+        },
+        {
+            "_id": "07b5a739-ba4f-4070-a17f-5a59d529acad",
+            "colId": "cd4f5d48-be03-4d8c-8a9b-eae7a0649b58",
+            "containerId": "",
+            "name": "Email repetido",
+            "url": "http://localhost:3000/api/auth/register",
+            "method": "POST",
+            "sortNum": 180000,
+            "created": "2026-11-21T23:54:35.556Z",
+            "modified": "2026-11-21T23:54:35.556Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": [
+                    "{ \"name\": \"Maximiliano\", \"email\": \"valentin@mail.com\", \"password\": \"123456\" }"
+                ],
+                "form": []
+            }
+        },
+        {
+            "_id": "6fc4fdfe-a90f-4a46-b1c1-1209db502bb7",
+            "colId": "cd4f5d48-be03-4d8c-8a9b-eae7a0649b58",
+            "containerId": "",
+            "name": "Contraseña corta",
+            "url": "http://localhost:3000/api/auth/register",
+            "method": "POST",
+            "sortNum": 190000,
+            "created": "2026-11-21T23:57:05.356Z",
+            "modified": "2026-11-21T23:57:05.356Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": [
+                    "{ \"name\": \"Ana\", \"email\": \"ana@mail.com\", \"password\": \"123\" }"
+                ],
+                "form": []
+            }
+        },
+        {
+            "_id": "e5779135-4448-49dc-80f2-49aaf600004c",
+            "colId": "cd4f5d48-be03-4d8c-8a9b-eae7a0649b58",
+            "containerId": "",
+            "name": "Login correcto",
+            "url": "http://localhost:3000/api/auth/login",
+            "method": "POST",
+            "sortNum": 200000,
+            "created": "2026-11-21T23:57:57.107Z",
+            "modified": "2026-11-21T23:57:57.107Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": [
+                    "{ \"email\": \"valentin@mail.com\", \"password\": \"123456\" }"
+                ],
+                "form": []
+            }
+        },
+        {
+            "_id": "5c277fce-4402-4590-8dc2-0a91c1523a4e",
+            "colId": "cd4f5d48-be03-4d8c-8a9b-eae7a0649b58",
+            "containerId": "",
+            "name": "Login contraseña incorrecta",
+            "url": "http://localhost:3000/api/auth/login",
+            "method": "POST",
+            "sortNum": 210000,
+            "created": "2026-11-22T00:22:30.338Z",
+            "modified": "2026-11-22T00:22:30.338Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": [
+                    "{ \"email\": \"valentin@mail.com\", \"password\": \"123457\"}"
+                ],
+                "form": []
+            }
+        },
+        {
+            "_id": "11935c6e-fa8c-4e07-8dd3-6229e5ede767",
+            "colId": "cd4f5d48-be03-4d8c-8a9b-eae7a0649b58",
+            "containerId": "",
+            "name": "Login correcto encargado",
+            "url": "http://localhost:3000/api/auth/login",
+            "method": "POST",
+            "sortNum": 230000,
+            "created": "2026-11-22T00:39:27.573Z",
+            "modified": "2026-11-22T00:39:27.573Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": [
+                    "{\"email\": \"almua@mail.com\", \"password\": \"123456\"}"
+                ],
+                "form": []
+            }
+        },
+        {
+            "_id": "d476b8a6-a9cc-485c-96f9-718de1e3f6cf",
+            "colId": "cd4f5d48-be03-4d8c-8a9b-eae7a0649b58",
+            "containerId": "",
+            "name": "POST sin token",
+            "url": "http://localhost:3000/api/products",
+            "method": "POST",
+            "sortNum": 240000,
+            "created": "2026-11-22T00:24:26.652Z",
+            "modified": "2026-11-22T00:24:26.652Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": [
+                    "{ \"name\": \"Leche\", \"category\": \"lacteos\" }"
+                ],
+                "form": []
+            }
+        },
+        {
+            "_id": "02fb0e7d-390c-4b21-aedc-7409a80de651",
+            "colId": "cd4f5d48-be03-4d8c-8a9b-eae7a0649b58",
+            "containerId": "",
+            "name": "POST token falso",
+            "url": "http://localhost:3000/api/products",
+            "method": "POST",
+            "sortNum": 250000,
+            "created": "2026-11-22T00:41:40.694Z",
+            "modified": "2026-11-22T00:41:40.694Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": [
+                    "{ \"name\": \"Leche\", \"category\": \"lacteos\" }"
+                ],
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "abc.def.ghi"
+            }
+        },
+        {
+            "_id": "48bf4410-cb2d-4fe4-afb5-d23361ad0a69",
+            "colId": "cd4f5d48-be03-4d8c-8a9b-eae7a0649b58",
+            "containerId": "",
+            "name": "POST crear con usuario miembro",
+            "url": "http://localhost:3000/api/products",
+            "method": "POST",
+            "sortNum": 260000,
+            "created": "2026-11-22T00:44:31.393Z",
+            "modified": "2026-11-22T00:44:31.393Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": [
+                    "{ \"name\": \"Queso\", \"quantity\": 2, \"category\": \"lacteos\", \"notes\": \"Muzzarela o cremoso\" }"
+                ],
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6Im1lbWJlciIsImlhdCI6MTc5NTMwNjgxNywiZXhwIjoxNzk1MzEwNDE3fQ.ETrEd_OcmPiIKlyi8-jQL5W9CExjgkcoqbZVC07XygI"
+            }
+        },
+        {
+            "_id": "22a3f663-3b91-4955-9cca-92da6bd80116",
+            "colId": "cd4f5d48-be03-4d8c-8a9b-eae7a0649b58",
+            "containerId": "",
+            "name": "PUT comprado con usuario miembro",
+            "url": "http://localhost:3000/api/products/3",
+            "method": "PUT",
+            "sortNum": 270000,
+            "created": "2026-11-22T00:48:27.189Z",
+            "modified": "2026-11-22T00:48:27.189Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": [
+                    "{ \"name\": \"Queso\", \"quantity\": 2, \"category\": \"lacteos\", \"notes\": \"Muzzarela o cremoso\", \"purchased\": true }"
+                ],
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6Im1lbWJlciIsImlhdCI6MTc5NTMwNjgxNywiZXhwIjoxNzk1MzEwNDE3fQ.ETrEd_OcmPiIKlyi8-jQL5W9CExjgkcoqbZVC07XygI"
+            }
+        },
+        {
+            "_id": "b77daf38-2e61-4881-a1ab-4547ebfb4a9e",
+            "colId": "cd4f5d48-be03-4d8c-8a9b-eae7a0649b58",
+            "containerId": "",
+            "name": "DELETE con usuario miembro",
+            "url": "http://localhost:3000/api/products/3",
+            "method": "DELETE",
+            "sortNum": 280000,
+            "created": "2026-11-22T00:49:55.654Z",
+            "modified": "2026-11-22T00:49:55.654Z",
+            "headers": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6Im1lbWJlciIsImlhdCI6MTc5NTMwNjgxNywiZXhwIjoxNzk1MzEwNDE3fQ.ETrEd_OcmPiIKlyi8-jQL5W9CExjgkcoqbZVC07XygI"
+            }
+        },
+        {
+            "_id": "3370951e-f467-49f8-8b84-62ff7e34c048",
+            "colId": "cd4f5d48-be03-4d8c-8a9b-eae7a0649b58",
+            "containerId": "",
+            "name": "PUT comprado con usuario shopper",
+            "url": "http://localhost:3000/api/products/3",
+            "method": "PUT",
+            "sortNum": 290000,
+            "created": "2026-11-22T00:50:46.747Z",
+            "modified": "2026-11-22T00:50:46.747Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": [
+                    "{ \"name\": \"Queso\", \"quantity\": 2, \"category\": \"lacteos\", \"notes\": \"Muzzarela o cremoso\", \"purchased\": true }"
+                ],
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6InNob3BwZXIiLCJpYXQiOjE3OTUzMDgwMTIsImV4cCI6MTc5NTMxMTYxMn0.vnq1A8pq7_2itDrX_xyNdtwKeXAuGz4rgD6JZPMCIMk"
+            }
+        },
+        {
+            "_id": "004939ba-3b42-41af-9e4b-d54d471c1aaa",
+            "colId": "cd4f5d48-be03-4d8c-8a9b-eae7a0649b58",
+            "containerId": "",
+            "name": "DELETE sin token",
+            "url": "http://localhost:3000/api/products/3",
+            "method": "DELETE",
+            "sortNum": 300000,
+            "created": "2026-11-22T00:52:20.412Z",
+            "modified": "2026-11-22T00:52:20.412Z",
+            "headers": []
+        },
+        {
+            "_id": "7342f565-973e-4816-bfac-b33b1988d372",
+            "colId": "cd4f5d48-be03-4d8c-8a9b-eae7a0649b58",
+            "containerId": "",
+            "name": "DELETE con usuario shopper",
+            "url": "http://localhost:3000/api/products/2",
+            "method": "DELETE",
+            "sortNum": 310000,
+            "created": "2026-11-22T00:53:24.311Z",
+            "modified": "2026-11-22T00:53:24.311Z",
+            "headers": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6InNob3BwZXIiLCJpYXQiOjE3OTUzMDgwMTIsImV4cCI6MTc5NTMxMTYxMn0.vnq1A8pq7_2itDrX_xyNdtwKeXAuGz4rgD6JZPMCIMk"
+            }
         }
     ],
-    "ref": "FjUa-idHo_e0A18ZPFz1IOT-s7hMInAGSX2nG5I_2otX_aH1R6YrPuff6rjkuolHfbO3Hc9V1Ds3b8XMPbo3_g"
+    "ref": "FjUa-idHo_e0A18ZPFz1ICpQ1TkWfUII94fs9m1HI2T7oF5043VZQrPS4L-1MXyH5IIzg8QPguoklbwr7CsDgA"
 }
